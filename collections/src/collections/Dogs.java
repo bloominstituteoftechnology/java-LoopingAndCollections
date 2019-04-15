@@ -1,7 +1,8 @@
 package collections;
 
 public class Dogs
-{    private String breed;
+{    
+    private String breed;
     private int avgWeight;
     private boolean apartment;
 

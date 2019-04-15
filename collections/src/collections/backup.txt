@@ -1,0 +1,19 @@
+
+
+        System.out.println("*** HashSet ***");
+        HashSet<String> dogsHashSet = new HashSet<String>();
+        dogsHashSet.add("Springer");
+        dogsHashSet.add("Mutt");
+        dogsHashSet.add("Bulldog");
+
+        for (String d : dogsHashSet)
+        {
+            System.out.println(d);
+        }
+        System.out.println();
+
+        dogsHashSet.add("Mutt");
+        for (String d : dogsHashSet)
+        {
+            System.out.println(d);
+        }

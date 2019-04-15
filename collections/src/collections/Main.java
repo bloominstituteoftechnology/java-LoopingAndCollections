@@ -6,10 +6,11 @@ public class Main
 {
     public static void main(String[] args)
     {
+        Dogs dogArr[];
+        dogArr = new Dogs[5];
+        // Dogs[] dogArr = new Dogs[5];
+
         System.out.println("*** Arrays ***");
-        // Dogs dogArr[];
-        // dogArr = new Dogs[5];
-        Dogs[] dogArr = new Dogs[5];
 
         dogArr[0] = new Dogs ("Springer", 50, false);
         dogArr[1] = new Dogs ("Bulldog", 50, true);
@@ -20,7 +21,7 @@ public class Main
 
         // Print out the array
         System.out.println("For Loop");
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < dogArr.length; i++)
         {
             System.out.println(dogArr[i]);
         }
@@ -29,6 +30,8 @@ public class Main
 
         System.out.println("\nprint out array");
         System.out.println(dogArr.toString());
+        System.out.println(Arrays.toString(dogArr));
+
 
 
         System.out.println("*** Array List ***");
@@ -53,6 +56,7 @@ public class Main
             System.out.println(d);
         }
         System.out.println();
+
 
         System.out.println("dogArrayList is (size) " + dogsArrayList.size());
         System.out.println(dogsArrayList.get(3));
@@ -94,7 +98,7 @@ public class Main
         {
             System.out.println(d);
         }
-        System.out.println();
+
 
 
         System.out.println("*** HashMap ***");
@@ -138,6 +142,7 @@ public class Main
         System.out.println();
 
 
+
         System.out.println("*** HashSet ***");
         HashSet<String> dogsHashSet = new HashSet<String>();
         dogsHashSet.add("Springer");
@@ -155,5 +160,6 @@ public class Main
         {
             System.out.println(d);
         }
+
     }
 }
