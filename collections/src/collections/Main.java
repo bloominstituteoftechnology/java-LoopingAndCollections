@@ -46,6 +46,29 @@ public class Main
         }
         System.out.println();
 
+
+        for (Dogs d : dogsArrayList)
+        {
+            if (d.getAvgWeight() >= 50)
+            {
+                System.out.println(d.getBreed() + " are large");
+            } else
+            {
+                System.out.println(d.getBreed() + " are small");
+            }
+        }
+        System.out.println();
+
+
+        if (dogsArrayList.get(2).equals("Turtle"))
+        {
+            System.out.println("We have a Match!!!");
+        } else
+        {
+            System.out.println("No match for " + dogsArrayList.get(2).getBreed());
+        }
+        System.out.println();
+
         dogsArrayList.add(2, new Dogs("Labrador", 75, false));
         dogsArrayList.forEach (d -> System.out.println(d));
         System.out.println();
