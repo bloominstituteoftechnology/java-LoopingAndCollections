@@ -20,33 +20,39 @@ public class Main
         // dogArr[5] = new Dogs ("Mutt", 15, true);
 
         // Print out the array
-        System.out.println("For Loop");
+        System.out.println("\n*** For Loop ***");
         for (int i = 0; i < dogArr.length; i++)
         {
             System.out.println(dogArr[i]);
         }
 
+        System.out.println("\n*** Work with Data ***");
+
         System.out.println("Breed 3 good for apartment? " + dogArr[3].isApartment());
 
-        System.out.println("\nprint out array");
+        System.out.println("\n*** Print out array ***");
         System.out.println(dogArr.toString());
+        System.out.println();
         System.out.println(Arrays.toString(dogArr));
+ 
 
-
-
-        System.out.println("*** Array List ***");
+        System.out.println("\n\n\n*** ArrayList ***");
         ArrayList<Dogs> dogsArrayList = new ArrayList<Dogs>();
         dogsArrayList.addAll(Arrays.asList(dogArr));
 
         dogsArrayList.add(new Dogs ("Mutt", 15, true));
 
+
+        // ********** ARRAYLIST **********
+
+        System.out.println("*** Print ArrayList ***");
         for (Dogs d : dogsArrayList)
         {
             System.out.println(d);
         }
         System.out.println();
 
-
+        System.out.println("\n Print ArrayList with Conditional");
         for (Dogs d : dogsArrayList)
         {
             if (d.getAvgWeight() >= 50)
@@ -60,7 +66,7 @@ public class Main
         System.out.println();
 
 
-        if (dogsArrayList.get(2).equals("Turtle"))
+        if (dogsArrayList.get(2).getBreed().equals("Turtle"))
         {
             System.out.println("We have a Match!!!");
         } else
@@ -69,22 +75,21 @@ public class Main
         }
         System.out.println();
 
+        System.out.println("\n*** Work with Elements ***");
         dogsArrayList.add(2, new Dogs("Labrador", 75, false));
         dogsArrayList.forEach (d -> System.out.println(d));
         System.out.println();
 
         dogsArrayList.set(2, new Dogs("Poodle", 50, false));
-        for (Dogs d : dogsArrayList)
-        {
-            System.out.println(d);
-        }
+
         System.out.println();
+        dogsArrayList.forEach (d -> System.out.println(d));
 
 
-        System.out.println("dogArrayList is (size) " + dogsArrayList.size());
-        System.out.println(dogsArrayList.get(3));
+        System.out.println("\ndogArrayList is (size) " + dogsArrayList.size());
+        System.out.println("\nDog[3] " + dogsArrayList.get(3));
         dogsArrayList.remove(3);
-        System.out.println(dogsArrayList.get(3));
+        System.out.println("Dog[3] " + dogsArrayList.get(3));
         System.out.println();
 
         Iterator<Dogs> iterator = dogsArrayList.iterator();
@@ -95,6 +100,7 @@ public class Main
         }
         System.out.println();
 
+        System.out.println("*** Let's Sort ***");
         Collections.sort(dogsArrayList, new Comparator <Dogs>()
         {
             public int compare (Dogs o1, Dogs o2)
@@ -109,22 +115,13 @@ public class Main
         }
         System.out.println();
 
-        Collections.sort(dogsArrayList, new Comparator <Dogs>()
-        {
-            public int compare (Dogs o1, Dogs o2)
-            {
-                return o2.getBreed().compareToIgnoreCase(o1.getBreed());
-            }
-        });
-
-        for (Dogs d : dogsArrayList)
-        {
-            System.out.println(d);
-        }
+        dogsArrayList.sort ((o1, o2) -> o2.getBreed().compareToIgnoreCase(o1.getBreed()));
+        dogsArrayList.forEach(d -> System.out.println(d));
 
 
+        // ********** HashMap **********
 
-        System.out.println("*** HashMap ***");
+        System.out.println("\n\n\n*** HashMap ***");
         HashMap<Integer, Dogs> dogsHashMap = new HashMap<Integer, Dogs>();
         int hashCount = 0;
         for (Dogs d : dogsArrayList)
@@ -134,55 +131,22 @@ public class Main
         }
         dogsArrayList.clear();
 
+        System.out.println("\n*** Work with elements ***");
+
         System.out.println(dogsHashMap.get(3));
         System.out.println(dogsHashMap.size());
         dogsHashMap.remove(3);
         System.out.println(dogsHashMap.get(3));
         System.out.println(dogsHashMap.size());
         System.out.println();
-
-        for (Integer i : dogsHashMap.keySet())
-        {
-            System.out.println("key: " + i + " value: " + dogsHashMap.get(i));
-        }
+        dogsHashMap.forEach((k, v) -> System.out.println("key: " + k + " value: " + v.getBreed()));
         System.out.println();
 
+        System.out.println("*** Let's Sort ***");
         ArrayList<HashMap.Entry<Integer, Dogs>> sortedMap = new ArrayList<HashMap.Entry<Integer, Dogs>>();
         sortedMap.addAll(dogsHashMap.entrySet());
-
-        Collections.sort(sortedMap, new Comparator<Map.Entry<Integer, Dogs> >()
-        {
-            public int compare (HashMap.Entry<Integer, Dogs> o1, HashMap.Entry<Integer, Dogs> o2)
-            {
-                return o1.getValue().getAvgWeight() - o2.getValue().getAvgWeight();
-            }
-        });
-
-        for (HashMap.Entry<Integer, Dogs> d : sortedMap)
-        {
-            System.out.println("key: " + d.getKey() + " value: " + d.getValue());
-        }
+        sortedMap.sort((o1, o2) -> o1.getValue().getAvgWeight() - o2.getValue().getAvgWeight());
+        sortedMap.forEach(d -> System.out.println("key: " + d.getKey() + " value: " + d.getValue()));
         System.out.println();
-
-
-
-        System.out.println("*** HashSet ***");
-        HashSet<String> dogsHashSet = new HashSet<String>();
-        dogsHashSet.add("Springer");
-        dogsHashSet.add("Mutt");
-        dogsHashSet.add("Bulldog");
-
-        for (String d : dogsHashSet)
-        {
-            System.out.println(d);
-        }
-        System.out.println();
-
-        dogsHashSet.add("Mutt");
-        for (String d : dogsHashSet)
-        {
-            System.out.println(d);
-        }
-
     }
 }

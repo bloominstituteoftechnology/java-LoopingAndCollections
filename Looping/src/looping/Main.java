@@ -2,6 +2,13 @@ package looping;
 
 import java.util.Random;
 
+//
+// To execute program
+//      javac looping/*.java
+//      jar cvfe looping.jar looping.Main looping/*.class
+//      java -jar looping.jar 100 255
+//
+
 public class Main
 {
     // Enter with Part 6 Recursion
@@ -25,13 +32,13 @@ public class Main
     public static void main(String[] args)
     {
         // Part 1 Random Numbers
-
+        System.out.println("*** Min, Max ***");
         Random rand = new Random();
 
         System.out.println("Min Integer is " + Integer.MIN_VALUE);
         System.out.println("Max Integer is " + Integer.MAX_VALUE);
 
-        System.out.println("\nRandom Numbers");
+        System.out.println("\n*** Random Numbers ***");
         for (int i = 0; i < 7; i++)
         {
             System.out.println("Random Number no bound: " + rand.nextInt());
@@ -39,7 +46,7 @@ public class Main
         }
 
 
-        System.out.println("\nRandom Doubles");
+        System.out.println("\n*** Random Doubles ***");
         int i = 0;
         while (i < 7)
         {
@@ -59,7 +66,7 @@ public class Main
 
 
 
-        System.out.println("\nRandoms Until 0");
+        System.out.println("\n*** Randoms Until 0 ***");
         int myTest;
         do
         {
@@ -71,7 +78,7 @@ public class Main
   
         // Part 3 If, continue, break
      
-        System.out.println("\nOnly Random Evens");
+        System.out.println("\n*** Only Random Evens ***");
         for (int j = 0; j < 10; j++)
         {
             int myTester = rand.nextInt(10);
@@ -80,11 +87,11 @@ public class Main
             {
                 continue;
             }
-            System.out.println(myTester);
+            System.out.println("Not an even: " + myTester);
         }
 
   
-        System.out.println("\nStop Random Evens");
+        System.out.println("\n*** Stop Random Evens ***");
         for (int j = 0; j < 10; j++)
         {
             int myTester = rand.nextInt(10);
@@ -100,10 +107,10 @@ public class Main
 
         // Part 4 If..Else and Switch
 
-        System.out.println("\nPrint Days (0 = Sunday)");
+        System.out.println("\n*** Print Days (0 = Sunday) ***");
 
         int randDay = rand.nextInt(7);
-        System.out.println("*** " + randDay);
+        System.out.println("A random day " + randDay);
 
         // == equals
         // != not equal
@@ -111,6 +118,7 @@ public class Main
         // && and
         // || or
 
+        System.out.println("\n*** Weekend ***");
         if ((randDay == 0) || (randDay == 6))
         {
             System.out.println("Weekend");
@@ -119,6 +127,7 @@ public class Main
             System.out.println("Weekday");
         }
 
+        System.out.println("\n*** Day of Week ***");
         if (randDay == 0)
         {
             System.out.println("Sunday");
@@ -145,7 +154,7 @@ public class Main
             System.out.println("Error");
         }
 
-        System.out.println("\nSwitch Days");
+        System.out.println("\n*** Switch Days Without Break *** ");
         switch (randDay)
         {
             case 0:
@@ -169,7 +178,7 @@ public class Main
         // Part 5 Improved Switch
 
         String randDayStr;
-        System.out.println("\nSwitch Day");
+        System.out.println("\n*** Switch Day With Break ***");
 
         switch (randDay)
         {
@@ -204,7 +213,8 @@ public class Main
 
         // Part 6 Recursion
 
-        System.out.println("\nRecursion");
+        // must be run with 100 225
+        System.out.println("\n*** Recursion ***");
 
         int p = Integer.parseInt(args[0]);
         int q = Integer.parseInt(args[1]);
