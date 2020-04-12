@@ -4,9 +4,9 @@
 
 This project is used to introduce in Java
 
-Looping
-Branching and Conditionals
-Collections including Arrays, ArrayLists, HashMaps, HashSets
+* Looping
+* Branching and Conditionals
+* Collections including Arrays, ArrayLists, HashMaps, HashSets
 
 ## Layout
 
