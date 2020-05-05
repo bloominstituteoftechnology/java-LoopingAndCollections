@@ -16,7 +16,7 @@ The main class contains most of the work. The work in that class is meant to dem
 
 ## Results
 
-The final outcome of this application is
+The output of this application is
 
 ```TEXT
 *** Arrays ***
