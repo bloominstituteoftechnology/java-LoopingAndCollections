@@ -103,7 +103,7 @@ public class Dog implements Comparable<Dog>
      */
     @Override public String toString()
     {
-        return "Dogs{" +
+        return "Dog{" +
             "breed='" + breed + '\'' +
             ", avgWeight=" + avgWeight +
             ", apartment=" + apartment +
