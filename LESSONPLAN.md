@@ -51,7 +51,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Welcome to Lambda School's Java Module 2!!!");
+        System.out.println("Welcome to BloomTech's Java Module 2!!!");
     }
 }
 ```
